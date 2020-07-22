@@ -4,9 +4,28 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../../actions/auth";
 
-const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+const Navbar = ({
+  auth: { isAuthenticated, loading },
+  logout,
+  toggleTheme,
+  theme,
+}) => {
   const authLinks = (
     <ul>
+      <span style={{ color: theme === "dark" ? "grey" : "yellow" }}>☀︎</span>
+      <span className="toggle">
+        <input
+          onChange={() => toggleTheme()}
+          id="checkbox"
+          className="checkbox"
+          type="checkbox"
+        />
+        <label htmlFor="checkbox" />
+      </span>
+      <span style={{ color: theme === "dark" ? "slateblue" : "grey" }}>☾</span>
+      <li>
+        <Link to="/profiles">Developers</Link>
+      </li>
       <li>
         <Link to="/dashboard">
           <i className="fas fa-user" />{" "}
@@ -24,8 +43,19 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   const guestLinks = (
     <ul>
+      <span style={{ color: theme === "dark" ? "grey" : "yellow" }}>☀︎</span>
+      <span className="toggle">
+        <input
+          onChange={() => toggleTheme()}
+          id="checkbox"
+          className="checkbox"
+          type="checkbox"
+        />
+        <label htmlFor="checkbox" />
+      </span>
+      <span style={{ color: theme === "dark" ? "slateblue" : "grey" }}>☾</span>
       <li>
-        <a href="#!">Developers</a>
+        <Link to="/profiles">Developers</Link>
       </li>
       <li>
         <Link to="/register">Register</Link>
@@ -35,7 +65,6 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       </li>
     </ul>
   );
-
   return (
     <nav className="navbar bg-dark">
       <h1>

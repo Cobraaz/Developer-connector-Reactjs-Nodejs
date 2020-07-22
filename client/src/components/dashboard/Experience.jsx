@@ -34,9 +34,9 @@ const Experience = ({ experience, deleteExperience }) => {
       <table className="table">
         <thead>
           <tr>
-            <th>Company</th>
-            <th className="hide-sm">Title</th>
-            <th className="hide-sm">Years</th>
+            <th className="dark-mode">Company</th>
+            <th className="hide-sm dark-mode">Title</th>
+            <th className="hide-sm dark-mode">Years</th>
             <th />
           </tr>
         </thead>
