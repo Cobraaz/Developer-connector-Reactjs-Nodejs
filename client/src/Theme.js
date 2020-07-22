@@ -1,6 +1,9 @@
 export const lightTheme = {
-  body: "#E2E2E2",
-  text: "#363537",
+  fontFamily: "Raleway",
+  fontSize: "1rem",
+  lineHeight: "1.6",
+  backgroundColor: "#fff",
+  color: "#333",
   toggleBorder: "#FFF",
   gradient: "linear-gradient(#39598A, #79D7ED)",
 };
